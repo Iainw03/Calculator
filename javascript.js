@@ -1,6 +1,9 @@
-let firstNumber = 3;
-let operator = 2;
-let secondNumber = 1;
+let firstNumber = 1;
+let operator = 1;
+let secondNumber = 2;
+let result;
+updateDisplay(0);
+
 
 function addition(num1,num2){
     return(num1 + num2);
@@ -33,9 +36,37 @@ function operate(operator){
     }
 
     if(op == 4){
-        return division(firstNumber,secondNumber);
+        return result = division(firstNumber,secondNumber);
     }
 }
 
 let test = operate(operator);
-console.log(test);
+console.log(result);
+
+function updateDisplay(numberDisplay){
+let display = document.querySelector("#DisplayNumber");
+display.textContent = numberDisplay;
+}
+
+const btn_1 = document.querySelector("#button1");
+        
+                btn_1.addEventListener("click", () => {
+                   if(firstNumber === undefined){
+                    firstNumber = 1;
+                    updateDisplay(firstNumber);
+                   }
+                   else if(operator === undefined){
+                    firstNumber += "1";
+                    updateDisplay(firstNumber);
+                   }
+                   else if(firstNumber !== undefined && operator !== undefined){
+                    secondNumber += "1";
+                    updateDisplay(secondNumber);
+                   }
+
+                   console.log(firstNumber);
+                })
+
+             
+            
+    
