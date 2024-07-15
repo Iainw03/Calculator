@@ -21,6 +21,17 @@ function division(num1,num2){
     return(num1 / num2);
 }
 
+function AC(){
+    firstNumber = undefined;
+    secondNumber = 0;
+    operator = undefined;
+    result = undefined;
+    updateDisplay(0);
+
+
+    return(firstNumber,secondNumber,operator,result);
+}
+
 function operate(operator){
     let op = operator;
     if(op == 1){
@@ -136,6 +147,12 @@ btn_3.addEventListener("click", () => {
   const btn_0 = document.querySelector("#button0");
   btn_0.addEventListener("click", () => {
     selectNumber(0);
+  
+  });
+
+  const btn_AC = document.querySelector("#buttonAC");
+  btn_AC.addEventListener("click", () => {
+    AC();
   
   });
 
