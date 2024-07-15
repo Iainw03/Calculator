@@ -1,6 +1,6 @@
-let firstNumber = 1;
-let operator = 1;
-let secondNumber = 2;
+let firstNumber;
+let operator;
+let secondNumber = 0;
 let result;
 updateDisplay(0);
 
@@ -48,24 +48,107 @@ let display = document.querySelector("#DisplayNumber");
 display.textContent = numberDisplay;
 }
 
+function selectNumber(number){
+    if(firstNumber === undefined){
+        firstNumber = number;
+        updateDisplay(firstNumber);
+        return firstNumber;
+       }
+       else if(operator === undefined){
+        firstNumber += number.toString();
+        updateDisplay(firstNumber);
+        return firstNumber;
+       }
+       else {
+        if (secondNumber === "") {
+            secondNumber = number.toString();
+        } else {
+            secondNumber += number.toString();
+        }
+        updateDisplay(secondNumber);
+        return secondNumber;
+    }
+
+    
+       }
+
+
+
+
 const btn_1 = document.querySelector("#button1");
         
                 btn_1.addEventListener("click", () => {
-                   if(firstNumber === undefined){
-                    firstNumber = 1;
-                    updateDisplay(firstNumber);
-                   }
-                   else if(operator === undefined){
-                    firstNumber += "1";
-                    updateDisplay(firstNumber);
-                   }
-                   else if(firstNumber !== undefined && operator !== undefined){
-                    secondNumber += "1";
-                    updateDisplay(secondNumber);
-                   }
+                  selectNumber(1);
 
                    console.log(firstNumber);
-                })
+                });
+
+
+                const btn_2 = document.querySelector("#button2");
+        
+                btn_2.addEventListener("click", () => {
+                  selectNumber(2);
+                
+                });
+
+const btn_3 = document.querySelector("#button3");
+btn_3.addEventListener("click", () => {
+    selectNumber(3);
+  
+  });
+
+  const btn_4 = document.querySelector("#button4");
+  btn_4.addEventListener("click", () => {
+    selectNumber(4);
+  
+  });
+
+  const btn_5 = document.querySelector("#button5");
+  btn_5.addEventListener("click", () => {
+    selectNumber(5);
+  
+  });
+
+  const btn_6 = document.querySelector("#button6");
+  btn_6.addEventListener("click", () => {
+    selectNumber(6);
+  
+  });
+
+  const btn_7 = document.querySelector("#button7");
+  btn_7.addEventListener("click", () => {
+    selectNumber(7);
+  
+  });
+
+  const btn_8 = document.querySelector("#button8");
+  btn_8.addEventListener("click", () => {
+    selectNumber(8);
+  
+  });
+
+  const btn_9 = document.querySelector("#button9");
+  btn_9.addEventListener("click", () => {
+    selectNumber(9);
+  
+  });
+
+  const btn_0 = document.querySelector("#button0");
+  btn_0.addEventListener("click", () => {
+    selectNumber(0);
+  
+  });
+
+
+
+
+                
+
+              
+        
+              
+
+               
 
              
             
