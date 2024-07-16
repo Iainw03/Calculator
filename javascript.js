@@ -46,15 +46,15 @@ function getResult(){
 function operate(operator){
     let op = operator;
     if(op == 1){
-        result = addition(firstNumber,secondNumber);
+        return addition(firstNumber,secondNumber);
     }
 
     if(op == 2){
-        result = subtraction(firstNumber,secondNumber);
+        return subtraction(firstNumber,secondNumber);
     }
 
     if(op == 3){
-        result = multiplication(firstNumber,secondNumber);
+        return multiplication(firstNumber,secondNumber);
     }
 
     if(op == 4){
@@ -71,6 +71,8 @@ display.textContent = numberDisplay;
 }
 
 function selectNumber(number){
+    
+
     if(firstNumber === undefined){
         firstNumber = number;
         updateDisplay(firstNumber);
@@ -184,6 +186,42 @@ btn_3.addEventListener("click", () => {
     else{
         getResult();
         operator = 4;
+    }
+  
+  });
+
+  const btn_add = document.querySelector("#buttonAdd");
+  btn_add.addEventListener("click", () => {
+    if(operator === undefined){
+        operator = 1;
+    }
+    else{
+        getResult();
+        operator = 1;
+    }
+  
+  });
+
+  const btn_sub = document.querySelector("#buttonSub");
+  btn_sub.addEventListener("click", () => {
+    if(operator === undefined){
+        operator = 2;
+    }
+    else{
+        getResult();
+        operator = 2;
+    }
+  
+  });
+
+  const btn_multiply = document.querySelector("#buttonMultiply");
+  btn_multiply.addEventListener("click", () => {
+    if(operator === undefined){
+        operator = 3;
+    }
+    else{
+        getResult();
+        operator = 3;
     }
   
   });
