@@ -29,25 +29,36 @@ function AC(){
     updateDisplay(0);
 
 
-    return(firstNumber,secondNumber,operator,result);
+    
+}
+
+function getResult(){
+    
+        result = operate(operator);
+        firstNumber = result;
+        secondNumber = 0;
+        operator = undefined;
+        updateDisplay(result);
+        
+    
 }
 
 function operate(operator){
     let op = operator;
     if(op == 1){
-        return addition(firstNumber,secondNumber);
+        result = addition(firstNumber,secondNumber);
     }
 
     if(op == 2){
-        return subtraction(firstNumber,secondNumber);
+        result = subtraction(firstNumber,secondNumber);
     }
 
     if(op == 3){
-        return multiplication(firstNumber,secondNumber);
+        result = multiplication(firstNumber,secondNumber);
     }
 
     if(op == 4){
-        return result = division(firstNumber,secondNumber);
+        return division(firstNumber,secondNumber);
     }
 }
 
@@ -73,11 +84,13 @@ function selectNumber(number){
        else {
         if (secondNumber === "") {
             secondNumber = number.toString();
+            secondNumber = parseFloat(secondNumber);
         } else {
             secondNumber += number.toString();
+            secondNumber = parseFloat(secondNumber);
         }
         updateDisplay(secondNumber);
-        return secondNumber;
+        return number(secondNumber);
     }
 
     
@@ -153,6 +166,25 @@ btn_3.addEventListener("click", () => {
   const btn_AC = document.querySelector("#buttonAC");
   btn_AC.addEventListener("click", () => {
     AC();
+  
+  });
+
+  const btn_equals = document.querySelector("#buttonEquals");
+  btn_equals.addEventListener("click", () => {
+    result = operate(operator);
+    updateDisplay(result);
+  
+  });
+
+  const btn_divide = document.querySelector("#buttonDivide");
+  btn_divide.addEventListener("click", () => {
+    if(operator === undefined){
+        operator = 4;
+    }
+    else{
+        getResult();
+        operator = 4;
+    }
   
   });
 
