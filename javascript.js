@@ -87,7 +87,8 @@ function selectNumber(number){
        else if(operator === undefined){
         firstNumber += number.toString();
         updateDisplay(firstNumber);
-        return firstNumber;
+        firstNumber = parseFloat(firstNumber);
+        return (firstNumber);
        }
        else {
         if (secondNumber === "") {
