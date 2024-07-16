@@ -8,6 +8,9 @@ button{
     font-size: 50px;
 }
 
+#button0, #buttonAC{
+    width: 50%;
+}
 .page{
     width: auto;
     height: 700px;

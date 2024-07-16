@@ -32,6 +32,12 @@ function AC(){
     
 }
 
+
+
+function addDecimal(){
+
+}
+
 function getResult(){
     
         result = operate(operator);
